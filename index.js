@@ -49,3 +49,5 @@ mongoose
 app.listen(PORT, (req, res) => {
     logger.warn(`Server started at port ${PORT}`)
 })
+
+export default app;
