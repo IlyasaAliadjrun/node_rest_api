@@ -42,7 +42,7 @@ mongoose
         logger.info("Connected to MongoDB")
     })
     .catch(error => {
-        logger.error(erro.message)
+        logger.error(error.message)
     })
 
 //starting port
