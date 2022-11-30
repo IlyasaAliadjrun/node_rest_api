@@ -60,6 +60,20 @@ export const getShoesById = async (req, res) => {
   // })
 };
 
+export const getShoesByName = async (req, res) => {
+  await Shoes.find({'name' : new RegExp(req.body.name, 'i')})
+    .then((shoe) => {
+      if (!shoe) {
+        res.status(404).send("Shoes not found");
+      } else if (shoe) {
+        res.send(shoe);
+      }
+    })
+    .catch((error) => {
+      res.status(500).send(error.message);
+    });
+};
+
 export const updateShoes = async (req, res) => {
   await Shoes.findByIdAndUpdate(
     req.params.shoesId,

@@ -1,10 +1,13 @@
 import express from "express";
-import { createShoes, getAllShoes, getShoesById, updateShoes, deleteShoes } from "../controllers/shoes.js";
+import { createShoes, getAllShoes, getShoesById, updateShoes, deleteShoes, getShoesByName } from "../controllers/shoes.js";
 
 const router = express.Router();
 
 //POST -> Create new shoes
 router.post('/', createShoes);
+
+//POST -> Get Shoes by name
+router.post('/name/', getShoesByName);
 
 //GET -> Get all shoes
 router.get('/', getAllShoes);
